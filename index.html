@@ -1,1 +1,440 @@
-Fresher Portfolio.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nishant Raut — AI & Data Science Portfolio</title>
+<meta name="description" content="Portfolio of Nishant Raut — AI & Data Science Engineer building models, analytics dashboards, and LLM applications.">
+<link rel="canonical" href="https://nishantraut.github.io/">
+<link rel="icon" type="image/jpeg" href="photo.jpg">
+
+<!-- Open Graph / WhatsApp / Facebook / Instagram -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nishantraut.github.io/">
+<meta property="og:title" content="Nishant Raut — AI & Data Science Portfolio">
+<meta property="og:description" content="Portfolio of Nishant Raut — AI & Data Science Engineer building models, analytics dashboards, and LLM applications.">
+<meta property="og:image" content="https://nishantraut.github.io/photo.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1254">
+<meta property="og:image:height" content="1254">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nishant Raut — AI & Data Science Portfolio">
+<meta name="twitter:description" content="Portfolio of Nishant Raut — AI & Data Science Engineer building models, analytics dashboards, and LLM applications.">
+<meta name="twitter:image" content="https://nishantraut.github.io/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- 1. TOKENS: colors and fonts ---------- */
+:root{--bg:#fff;--ink:#0a0a0a;--muted:#6b6b76;--line:#e4e4ea;--on-ink:#fff;--accent:#4f46ff;
+--c0:#14b8c4;--c1:#f59e0b;--c2:#e63e7a;
+--display:"Inter Tight",system-ui,sans-serif;--body:Inter,system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--ink:#f5f5f7;--muted:#9a9aa6;--line:#23232b;--on-ink:#0a0a0a;--accent:#8b87ff}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--ink:#f5f5f7;--muted:#9a9aa6;--line:#23232b;--on-ink:#0a0a0a;--accent:#8b87ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);margin:0;font-weight:800;line-height:.95;letter-spacing:-.045em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--c0),var(--c1),var(--c2));z-index:60}
+header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 22px 14px;mix-blend-mode:difference;color:#fff;pointer-events:none}
+header a{font:600 15px var(--body);text-decoration:none;pointer-events:auto}
+header .pill{border:1.5px solid #fff;border-radius:999px;padding:8px 18px}
+
+/* ---------- 2. HERO: big type over live dot clusters ---------- */
+#hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:56px;overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%}
+#glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,35%),color-mix(in srgb,var(--c0) 22%,transparent),transparent 70%)}
+.hero-in{position:relative;pointer-events:none;display:flex;flex-direction:column;align-items:flex-start}
+.hero-in a,.hero-in button{pointer-events:auto}
+.hero-title{margin:0 0 8px}
+.hero-greet{display:block;font-size:clamp(22px,3.5vw,36px);font-weight:700;color:var(--ink);letter-spacing:-.025em;margin-bottom:6px;opacity:.95}
+.hero-name{display:inline-block;font-size:clamp(54px,11vw,130px);font-weight:800;line-height:.95;letter-spacing:-.045em;background:linear-gradient(135deg,#14b8c4 0%,#6366f1 35%,#ec4899 70%,#f59e0b 100%);background-size:250% 250%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 6s ease-in-out infinite alternate;filter:drop-shadow(0 4px 28px rgba(99,102,241,0.45));margin-bottom:10px}
+@keyframes gradientShift{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+.hero-tagline{font-family:var(--display);font-size:clamp(24px,4vw,44px);font-weight:800;letter-spacing:-.035em;color:var(--ink);line-height:1.15;margin:0 0 10px}
+.sub{font-size:clamp(16px,2vw,20px);max-width:44ch;margin:0 0 20px;color:var(--muted);line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:600 15px var(--body);padding:10px 18px;border-radius:999px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;transition:transform .15s}
+.chip:active{transform:scale(.95)}
+.chip[aria-pressed="true"]{background:var(--k,var(--ink));border-color:var(--k,var(--ink));color:#fff}
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;font-weight:600;text-decoration:none;background:var(--ink);color:var(--on-ink);margin:0 10px 10px 0;transition:transform .2s,background .2s;will-change:transform}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn:hover{background:var(--accent);color:#fff;box-shadow:none}
+
+/* ---------- 3. PINNED SCROLL STORY ---------- */
+#story{position:relative}
+.stick{position:sticky;top:0;height:100svh;display:grid;grid-template-rows:1fr 1fr;overflow:hidden;background:var(--bg)}
+@media (min-width:820px){.stick{grid-template-rows:none;grid-template-columns:1fr 1fr;align-items:center;gap:40px;max-width:1180px;margin:0 auto;padding:0 22px}}
+.info{padding:84px 22px 0;display:flex;flex-direction:column;justify-content:center}
+@media (min-width:820px){.info{padding:0}}
+.count{color:var(--muted);font-weight:600;margin-bottom:12px}
+.info h2{font-size:clamp(40px,8vw,96px);min-height:2em}
+.info p{color:var(--muted);max-width:36ch;margin:18px 0 8px}
+.tag{display:inline-block;align-self:flex-start;font-weight:600;font-size:14px;padding:4px 12px;border-radius:999px;color:#fff;background:var(--c);margin-bottom:10px}
+.stack{font-weight:600}
+.go{margin-top:12px;font-weight:600}
+.swap{transition:opacity .35s,transform .35s}
+.swap.out{opacity:0;transform:translateY(16px)}
+.art{position:relative;margin:0 22px 22px;border-radius:28px;background:var(--c,var(--accent));overflow:hidden;transition:background .6s,transform .15s ease-out;will-change:transform}
+@media (min-width:820px){.art{margin:0;height:min(70vh,560px)}}
+.art i{position:absolute;display:block;border:3px solid rgba(255,255,255,.85)}
+.art i:nth-child(1){width:46%;aspect-ratio:1;left:12%;top:14%;border-radius:50%}
+.art i:nth-child(2){width:40%;aspect-ratio:1;right:10%;bottom:12%;border-radius:26%}
+.art i:nth-child(3){width:22%;aspect-ratio:1;right:24%;top:20%;border-radius:50%;background:rgba(255,255,255,.9);border:0}
+.dots{position:absolute;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:5}
+.dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);background:transparent;padding:0;cursor:pointer}
+.dots button[aria-current="true"]{background:var(--ink)}
+
+/* ---------- 4. SKILL ROWS ---------- */
+#skills{padding:100px 0;overflow:hidden}
+.row{display:flex;gap:36px;width:max-content;will-change:transform}
+.row span{font:800 clamp(52px,12vw,150px) var(--display);letter-spacing:-.045em;white-space:nowrap;line-height:1.1}
+.row.o span{color:transparent;-webkit-text-stroke:2px var(--ink)}
+
+/* ---------- 5. ABOUT, STATS, CONTACT ---------- */
+section.pad{padding:96px 0}
+#aboutTxt p{font:500 clamp(26px,4.4vw,52px)/1.12 var(--display);letter-spacing:-.03em;max-width:24ch;margin:0 0 22px}
+.stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:44px}
+.stats b{display:block;font:800 clamp(48px,9vw,96px) var(--display);letter-spacing:-.05em;line-height:1}
+.stats span{color:var(--muted)}
+#contact{border-top:1px solid var(--line)}
+.big{display:block;font:800 clamp(34px,9vw,120px) var(--display);letter-spacing:-.05em;line-height:1;text-decoration:none;word-break:break-all;transition:color .2s}
+.big:hover{color:var(--accent)}
+footer{padding-bottom:48px;color:var(--muted);font-size:14px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- 5b. FRESHER SECTIONS ---------- */
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);margin-bottom:18px}
+.badge i{width:9px;height:9px;border-radius:50%;background:#22c55e;animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}100%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
+.two{display:grid;gap:48px}
+@media (min-width:820px){.two{grid-template-columns:1.3fr 1fr}}
+.two h2{font-size:clamp(32px,6vw,56px);margin-bottom:24px}
+.tl{list-style:none;margin:0;padding:0 0 0 24px;border-left:3px solid var(--line)}
+.tl li{position:relative;padding:0 0 30px}
+.tl li::before{content:"";position:absolute;left:-33px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--accent)}
+.tl h3{font-size:clamp(22px,4vw,32px);letter-spacing:-.03em;line-height:1.1}
+.tl .when{color:var(--muted);font-weight:600;font-size:14px;margin-top:6px}
+.tl p{margin:6px 0 0;color:var(--muted);max-width:52ch}
+.pills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 40px}
+.pills li{padding:8px 16px;border-radius:999px;border:2px solid var(--line);font-weight:600;font-size:15px}
+.result{font-weight:600;color:var(--ink)}
+
+/* ---------- 5c. AVATAR & STICKER ---------- */
+.me{all:unset;box-sizing:border-box;display:block;position:relative;width:clamp(96px,22vw,132px);aspect-ratio:1;margin-bottom:34px;cursor:pointer;transition:transform .2s ease-out;will-change:transform}
+.me:focus-visible{outline:3px solid var(--accent);outline-offset:6px;border-radius:50%}
+.me img,.me .ph{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--bg);box-shadow:0 0 0 3px var(--accent);background:var(--line);display:grid;place-items:center;font:800 36px var(--display);color:var(--ink)}
+.sticker{position:absolute;left:50%;bottom:-16px;transform:translateX(-50%) rotate(-6deg);white-space:nowrap;display:inline-flex;gap:7px;align-items:center;padding:7px 14px;border-radius:999px;background:#22c55e;color:#06260f;font:600 13px var(--body);box-shadow:0 3px 0 rgba(0,0,0,.25);transition:transform .25s cubic-bezier(.3,1.7,.5,1)}
+.sticker i{width:8px;height:8px;border-radius:50%;background:#06260f;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.me:hover .sticker,.me.pop .sticker{transform:translateX(-50%) rotate(5deg) scale(1.08)}
+@media (prefers-reduced-motion:reduce){.sticker i{animation:none}.sticker,.me{transition:none}}
+
+/* ---------- 6. CURSOR (desktop) ---------- */
+#cur{position:fixed;width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);pointer-events:none;z-index:70;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;display:none}
+#cur.big{width:56px;height:56px;background:color-mix(in srgb,var(--c1) 30%,transparent)}
+@media (pointer:fine){#cur{display:block}}
+@media (prefers-reduced-motion:reduce){.badge i{animation:none}#hero h1 .w{animation:none;transform:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.swap,#blob{transition:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div><div id="cur"></div>
+<header><a href="#hero" id="logo"></a><a class="pill" href="#contact">Contact</a></header>
+
+<section id="hero">
+  <canvas id="cv" role="img" aria-label="Animated dots grouped into skill clusters"></canvas>
+  <div id="glow"></div>
+  <div class="wrap hero-in">
+    <button type="button" class="me" id="me" aria-label="Interactive profile avatar">
+      <img id="meImg" src="photo.jpg" alt="">
+      <span class="sticker"><i></i><span id="stickerTxt"></span></span>
+    </button>
+    <h1 class="hero-title">
+      <span class="hero-greet">Hi, I'm</span>
+      <span class="hero-name" id="nameHighlight"></span>
+    </h1>
+    <p class="hero-tagline" id="headline"></p>
+    <p class="sub" id="role"></p>
+    <div class="chips" id="chips" role="group" aria-label="Filter projects by skill"></div>
+    <div id="heroBtns"></div>
+  </div>
+</section>
+
+<section id="story" aria-label="Projects">
+  <div class="stick">
+    <div class="info">
+      <div class="count" id="count"></div>
+      <span class="tag swap" id="ptag"></span>
+      <h2 class="swap" id="pt"></h2>
+      <p class="swap" id="pd"></p>
+      <div class="result swap" id="pr"></div>
+      <div class="stack swap" id="ps"></div>
+      <a class="go swap" id="pl" href="#">View project</a>
+    </div>
+    <div class="art" id="art" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section id="skills" aria-label="Skills"><div class="row" id="r1"></div><div class="row o" id="r2"></div></section>
+
+<section id="journey" class="pad"><div class="wrap two">
+  <div><h2 class="rv">Education & Experience</h2><ol class="tl rv" id="edu"></ol></div>
+  <div><h2 class="rv">Key Competencies</h2><ul class="pills rv" id="certs"></ul><h2 class="rv">Learning now</h2><ul class="pills rv" id="learn"></ul></div>
+</div></section>
+
+<section id="about" class="pad"><div class="wrap">
+  <div id="aboutTxt" class="rv"></div>
+  <div class="stats" id="stats"></div>
+</div></section>
+
+<section id="contact" class="pad"><div class="wrap">
+  <p class="rv" style="color:var(--muted);margin:0 0 14px">Have a role or a project in mind?</p>
+  <a class="big rv" id="mail" href="#"></a>
+  <div class="rv" id="links" style="margin-top:36px"></div>
+</div></section>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+/* ============ EDIT ONLY THIS BLOCK FOR CONTENT ============ */
+const SITE = {
+  name: "Nishant Raut",
+  email: "nishantraut225@gmail.com",
+  phone: "+91 7066155187",
+  location: "Pune, Maharashtra",
+  photo: "photo.jpg",
+  headline: ["Data in.", "Decisions out."],
+  stickers: ["Open to work", "B.E. AI & DS (8.83 CGPA)", "Data Analyst", "Let's talk"],
+  role: "Data Analyst & AI/Data Science Engineer skilled in SQL, Python, Power BI, Tableau, ETL pipelines, and Machine Learning.",
+  resume: "resume.pdf",
+  education: [
+    { title: "B.E. in Artificial Intelligence and Data Science", where: "Anantrao Pawar College of Engineering and Research, Pune (SPPU)", when: "2022 – June 2026", text: "CGPA: 8.83 / 10. Relevant Coursework: Data Structures & Algorithms, DBMS, Machine Learning, NLP, Data Warehousing, Statistics, Software Engineering." },
+    { title: "Higher Secondary Certificate (HSC) — Science", where: "New English High School and Junior College, Wardha", when: "2021 – 2022", text: "Science stream with Mathematics, Computer Science, and Physics." }
+  ],
+  experience: [
+    { title: "RoboWaves — Team Member", where: "International Robotics Event, USA", when: "Team Representation", text: "Selected to represent RoboWaves at an international robotics event in the USA. Collaborated on technical preparation, telemetry data tracking, and team coordination." },
+    { title: "Freelance Technical Services", where: "Remote", when: "Client Solutions", text: "Delivered automation, web development, data-related processing, and custom hosting solutions for clients." }
+  ],
+  certs: [
+    "B.E. AI & Data Science (CGPA: 8.83/10)",
+    "SQL Optimization & Relational DBMS",
+    "Power BI & Tableau Dashboard Development",
+    "Machine Learning & Statistical Data Analysis"
+  ],
+  learning: [
+    "Generative AI & LLMs",
+    "RAG & Prompt Engineering",
+    "Docker & Kubernetes",
+    "Cloud Data Warehousing & ETL"
+  ],
+  clusters: ["Data Analytics & BI", "Data Engineering & SQL", "AI & Machine Learning"],
+  projects: [
+    { c: 1, title: "SQL-Based Test Data Validation & Reporting", text: "Automated business rule validation across complex relational tables using SQL joins, aggregate functions, and integrity constraints covering 300+ records.", result: "Improved backend data quality and reporting accuracy through systematic, rule-based testing.", stack: "SQL, MySQL, PL/SQL, Relational DBMS, Data Validation", href: "#" },
+    { c: 0, title: "COVID-19 Public Health Trend Analysis", text: "Aggregated state-level COVID-19 case metrics across India using SQL to uncover epidemiological patterns and temporal spread over peak periods.", result: "Built interactive Tableau dashboard delivering state-wise trend insights for data-driven reporting.", stack: "SQL, Tableau, Data Visualization, Excel, EDA", href: "#" },
+    { c: 2, title: "AI-Based Resume Screening & Recommendation", text: "NLP application in Python that parses resumes, extracts candidate competencies, and matches candidate profiles to relevant job descriptions.", result: "Automated candidate-job matching using SBERT, TF-IDF, and cosine similarity.", stack: "Python, NLP, SBERT, Scikit-learn, TF-IDF, Cosine Similarity", href: "#" },
+    { c: 0, title: "Sales Insights & Business KPI Dashboard", text: "Interactive business analytics dashboard uncovering sales drivers, product performance, and regional revenue trends with automated ETL pipelines.", result: "Cut report preparation time by 60% with live KPI tracking.", stack: "Python, SQL, Power BI, Excel, Data Modeling", href: "#" },
+    { c: 2, title: "Customer Sentiment & Feedback Intelligence", text: "Real-time NLP pipeline classifying customer feedback polarity, topic trends, and satisfaction sentiment from user reviews.", result: "Processed and classified 15k+ review samples with high precision.", stack: "Python, Transformers, Hugging Face, NLTK, Pandas", href: "#" },
+    { c: 1, title: "RoboWaves Robotics Event Preparation", text: "Selected to represent RoboWaves at an international robotics event in the USA, managing telemetry data tracking and technical team coordination.", result: "International robotics event representation and data tracking.", stack: "Python, Data Tracking, Robotics Telemetry, Team Collaboration", href: "#" }
+  ],
+  skills: [
+    "SQL", "Python", "Power BI", "Tableau", "Pandas", "NumPy", "Scikit-Learn",
+    "MySQL", "PL/SQL", "Excel", "ETL Pipelines", "Data Modeling",
+    "Data Visualization", "Machine Learning", "NLP", "Generative AI", "Docker", "Git", "GitHub"
+  ],
+  about: [
+    "Data Analyst fresher with a B.E. in Artificial Intelligence and Data Science (CGPA: 8.83/10) from Anantrao Pawar College of Engineering, Pune.",
+    "Skilled in SQL, Python, and building real dashboards using Power BI and Tableau, with strong project experience in data validation, ETL, statistical analysis, and Machine Learning systems."
+  ],
+  stats: [
+    { n: 6, label: "Featured Projects" },
+    { n: 8.83, label: "B.E. CGPA (/10)", isDecimal: true },
+    { n: 18, label: "Core Tech Tools" }
+  ],
+  links: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/nishant-raut-476a232a5" },
+    { label: "GitHub", href: "https://github.com/nishantraut" },
+    { label: "Email Me", href: "mailto:nishantraut225@gmail.com" },
+    { label: "Download Resume", href: "resume.pdf" }
+  ]
+};
+/* ========================================================= */
+
+const $ = id => document.getElementById(id), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const col = i => `var(--c${i})`;
+
+/* ---- render static content ---- */
+document.title = SITE.name + " — Data Analyst & AI Engineer";
+$("logo").textContent = SITE.name;
+$("nameHighlight").textContent = SITE.name;
+$("headline").textContent = SITE.headline.join(" ");
+$("role").textContent = SITE.role;
+$("chips").innerHTML = ["All", ...SITE.clusters].map((l, i) =>
+  `<button class="chip" data-i="${i - 1}" style="--k:${i ? col(i - 1) : "var(--ink)"}" aria-pressed="${i === 0}">${esc(l)}</button>`).join("");
+$("heroBtns").innerHTML = `<a class="btn" href="#story">See my work</a><a class="btn alt" href="${esc(SITE.resume)}" download>Download resume</a>`;
+const allJourney = [...SITE.education, ...(SITE.experience || [])];
+$("edu").innerHTML = allJourney.map(e => `<li><h3>${esc(e.title)}</h3><div class="when">${esc(e.where)} · ${esc(e.when)}</div><p>${esc(e.text)}</p></li>`).join("");
+$("certs").innerHTML = SITE.certs.map(c => `<li>${esc(c)}</li>`).join("");
+$("learn").innerHTML = SITE.learning.map(c => `<li>${esc(c)}</li>`).join("");
+const rows = SITE.skills.concat(SITE.skills).map(s => `<span>${esc(s)}</span>`).join("");
+$("r1").innerHTML = rows; $("r2").innerHTML = rows;
+$("aboutTxt").innerHTML = SITE.about.map(t => `<p>${esc(t)}</p>`).join("");
+$("stats").innerHTML = SITE.stats.map(s => `<div class="rv"><b data-n="${s.n}" data-dec="${!!s.isDecimal}">0</b><span>${esc(s.label)}</span></div>`).join("");
+$("mail").textContent = SITE.email; $("mail").href = "mailto:" + SITE.email;
+$("links").innerHTML = SITE.links.map(l => `<a class="btn alt" href="${esc(l.href)}" ${l.href.startsWith("http") ? 'target="_blank" rel="noopener"' : ''}>${esc(l.label)}</a>`).join("");
+$("foot").textContent = "© " + new Date().getFullYear() + " " + SITE.name + " · Data Analyst & AI Portfolio";
+
+/* ---- filter: chips drive dots AND the pinned story ---- */
+let active = -1, list = SITE.projects, cur = -1;
+function applyFilter() {
+  list = active === -1 ? SITE.projects : SITE.projects.filter(p => p.c === active);
+  $("story").style.height = (list.length * 100 + 100) + "svh";
+  $("dots").innerHTML = list.map((p, i) => `<button aria-label="Project ${i + 1}: ${esc(p.title)}" data-i="${i}"></button>`).join("");
+  cur = -1; onScroll();
+  if (still) drawStill();
+}
+$("chips").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  active = +b.dataset.i;
+  $$(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
+  applyFilter();
+});
+function show(i) {
+  if (i === cur) return; cur = i;
+  const p = list[i], sw = $$(".swap");
+  sw.forEach(e => e.classList.add("out"));
+  setTimeout(() => {
+    $("count").textContent = String(i + 1).padStart(2, "0") + " / " + String(list.length).padStart(2, "0");
+    $("ptag").textContent = SITE.clusters[p.c]; $("ptag").style.setProperty("--c", col(p.c));
+    $("pt").textContent = p.title; $("pd").textContent = p.text; $("pr").textContent = p.result; $("ps").textContent = p.stack; $("pl").href = p.href;
+    $("art").style.setProperty("--c", col(p.c));
+    sw.forEach(e => e.classList.remove("out"));
+  }, still ? 0 : 180);
+  $$(".dots button").forEach((b, k) => b.setAttribute("aria-current", k === i));
+}
+$("dots").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const top = $("story").getBoundingClientRect().top + scrollY;
+  scrollTo({ top: top + (+b.dataset.i + .5) * innerHeight, behavior: still ? "auto" : "smooth" });
+});
+
+/* ---- one scroll handler ---- */
+function onScroll() {
+  const h = document.documentElement, vh = innerHeight;
+  $("bar").style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+  const s = $("story").getBoundingClientRect();
+  const prog = Math.min(Math.max(-s.top / Math.max(s.height - vh, 1), 0), .9999);
+  show(Math.min(Math.floor(prog * list.length), list.length - 1));
+  const a = $("art").children;
+  a[0].style.transform = `rotate(${prog * 360}deg)`;
+  a[1].style.transform = `rotate(${-prog * 270}deg) scale(${1 + Math.sin(prog * 6.28) * .1})`;
+  a[2].style.transform = `translateY(${Math.sin(prog * 12.56) * 30}px)`;
+  const t = ($("skills").getBoundingClientRect().top - vh) * .35;
+  $("r1").style.transform = `translateX(${t}px)`;
+  $("r2").style.transform = `translateX(${-t - 600}px)`;
+}
+addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll);
+
+/* ---- reveal + counters ---- */
+const count = el => {
+  const n = +el.dataset.n, isDec = el.dataset.dec === "true";
+  if (still) return el.textContent = isDec ? n.toFixed(2) : n;
+  let t0; const step = t => {
+    t0 ??= t; const p = Math.min((t - t0) / 1200, 1);
+    const val = n * (1 - Math.pow(1 - p, 3));
+    el.textContent = isDec ? val.toFixed(2) : Math.round(val);
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in"); io.unobserve(e.target);
+  const b = e.target.querySelector("[data-n]"); if (b) count(b);
+}), { threshold: .2 });
+$$(".rv").forEach(el => io.observe(el));
+
+/* ---- magnetic buttons, art tilt, cursor ---- */
+$$(".btn").forEach(b => {
+  b.addEventListener("pointermove", e => {
+    if (still || e.pointerType !== "mouse") return;
+    const r = b.getBoundingClientRect();
+    b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .25}px,${(e.clientY - r.top - r.height / 2) * .35}px)`;
+  });
+  b.addEventListener("pointerleave", () => b.style.transform = "");
+});
+$("art").addEventListener("pointermove", e => {
+  if (still || e.pointerType !== "mouse") return;
+  const r = $("art").getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+  $("art").style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg)`;
+});
+$("art").addEventListener("pointerleave", () => $("art").style.transform = "");
+addEventListener("pointermove", e => { $("cur").style.left = e.clientX + "px"; $("cur").style.top = e.clientY + "px"; });
+document.addEventListener("pointerover", e => $("cur").classList.toggle("big", !!e.target.closest("a,button")));
+
+/* ---- hero dot clusters ---- */
+const hero = $("hero"), cv = $("cv"), ctx = cv.getContext("2d");
+let W, H, dots = [], ptr = { x: -999, y: -999 };
+const centers = [[.2,.26],[.5,.14],[.8,.26]];
+const rnd = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
+function build() {
+  const r = cv.getBoundingClientRect(), d = devicePixelRatio || 1;
+  W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+  const n = W < 500 ? 110 : 200;
+  dots = Array.from({ length: n }, (_, i) => ({ c: i % 3, ox: rnd(), oy: rnd(), x: Math.random() * W, y: Math.random() * H, vx: 0, vy: 0, r: 2 + Math.random() * 2.6 }));
+}
+function frame() {
+  const cs = getComputedStyle(document.documentElement), cols = [0, 1, 2].map(i => cs.getPropertyValue("--c" + i).trim());
+  ctx.clearRect(0, 0, W, H);
+  const R = Math.min(W * .15, 90);
+  for (const p of dots) {
+    const sel = active === -1 || active === p.c, sp = active === -1 ? 1 : sel ? .7 : 1.3;
+    const tx = centers[p.c][0] * W + p.ox * R * sp, ty = centers[p.c][1] * H + p.oy * R * sp;
+    p.vx += (tx - p.x) * .02; p.vy += (ty - p.y) * .02;
+    const dx = p.x - ptr.x, dy = p.y - ptr.y, d2 = dx * dx + dy * dy;
+    if (d2 < 10000) { const m = Math.sqrt(d2) || 1, f = (100 - m) * .035; p.vx += dx / m * f; p.vy += dy / m * f; }
+    p.vx *= .86; p.vy *= .86; p.x += p.vx; p.y += p.vy;
+    ctx.globalAlpha = sel ? .95 : .18; ctx.fillStyle = cols[p.c];
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+  }
+  if (!still) requestAnimationFrame(frame);
+}
+function drawStill() { for (let i = 0; i < 200; i++) frame(); }
+hero.addEventListener("pointermove", e => {
+  const r = cv.getBoundingClientRect(); ptr = { x: e.clientX - r.left, y: e.clientY - r.top };
+  hero.style.setProperty("--mx", ptr.x + "px"); hero.style.setProperty("--my", ptr.y + "px");
+});
+hero.addEventListener("pointerleave", () => ptr = { x: -999, y: -999 });
+addEventListener("resize", () => { build(); if (still) drawStill(); });
+build(); applyFilter();
+if (still) drawStill(); else requestAnimationFrame(frame);
+
+/* ---- interactive avatar & sticker ---- */
+const me = $("me"), meImg = $("meImg"), stTxt = $("stickerTxt");
+const msgs = SITE.stickers || ["Open to work"];
+let k = 0; stTxt.textContent = msgs[0];
+if (SITE.photo) meImg.src = SITE.photo;
+meImg.alt = "Photo of " + SITE.name;
+meImg.addEventListener("error", () => {
+  const ph = document.createElement("span"); ph.className = "ph";
+  ph.textContent = SITE.name.split(" ").map(w => w[0]).join("").slice(0, 2);
+  meImg.replaceWith(ph);
+});
+me.addEventListener("click", () => {
+  k = (k + 1) % msgs.length; stTxt.textContent = msgs[k];
+  me.classList.add("pop"); setTimeout(() => me.classList.remove("pop"), 500);
+});
+me.addEventListener("pointermove", e => {
+  if (still || e.pointerType !== "mouse") return;
+  const r = me.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+  me.style.transform = `perspective(500px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg)`;
+});
+me.addEventListener("pointerleave", () => me.style.transform = "");
+</script>
+</body>
+</html>
